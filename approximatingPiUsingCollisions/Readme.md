@@ -1,2 +1,3 @@
-This is one of the most interesting approximations of Pi that I have encountered. 
-Let's say you have two boxes, one with mass m stationary and one with mass alpha*m moving to the left. The stationary box is in between the moving box and a wall (located in its left). The moving box pushes the stationary one to the left, it collides with the wall and the bounces back and may or may not hit the box with mass alpha m. If alpha =10^(2x), the number of collisions is the first x digits of Pi. This is a simple code simulating this amazing phenomena. 
+## Approximating $\pi$ using a simple physics problem (collisiosn in one dimension)
+This is one of the most interesting approximations of $\pi$ that I have encountered. 
+Let's say you have two boxes, box $A$ with mass $m$ stationary and bos $B$ with mass $\alpha m$ moving to the left. Box $A$ is in between the box $B$ and a wall (located to its left). $B$ pushes $A$ to the left, it collides with the wall and the bounces back and may or may not hit $B$. If $\alpha =10^{2n}$, the number of collisions is the first $n$ digits of $\pi$. This is a simple code simulating this amazing phenomena. 
