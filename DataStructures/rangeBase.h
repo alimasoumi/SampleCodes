@@ -1,5 +1,6 @@
 #include <vector>
 #include <functional>
+#include <iostream>
 
 /*
     Simple implementation of segment tree. 
@@ -44,12 +45,15 @@ rangeQuery<T>::rangeQuery(std::vector<T> &input, std::function<T(const T &, cons
 {
     size_t sz = input.size();
     size_t heap_sz = 1;
+    bool not_perfect_pow= sz%2;
     while (sz > 1)
     {
+        if(sz%2) not_perfect_pow = true;
         sz /= 2;
         heap_sz *= 2;
     };
     heap_sz *= 2;
+    if(not_perfect_pow) heap_sz *= 2;
     heap_sz--;
     heap = std::vector<T>(heap_sz, default_value);
     build_tree(input, 0, orig_sz-1, 0  );
@@ -85,9 +89,7 @@ void rangeQuery<T>::update(int ind, T val){
     int pos = find_leaf(0, orig_sz-1, ind, 0);
     heap[pos] = val;
     while(pos ){
-        pos /= 2;
+        pos= (pos-1)/2;
         heap[pos] = op(heap[2*pos+1], heap[2*pos+2]);
     }
-    for(int x: heap) std::cout << x << "\t";
-    std::cout << std::endl;
 }
